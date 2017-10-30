@@ -161,7 +161,7 @@
   ****************************************************************]]
 
 local event_config = {
-[1] = {name="Clearcast", display="Clearcast!", type="BUFF", target="SELF", search="Clearcast", icon=1, r=256/256, g=256/256, b=0/256, iscrit=1, soundwave="Sound\\Spells\\Clearcasting_Impact_Chest.wav", class={"Mage","Shaman","Druid","Priest"}},
+[1] = {name="Clearcast", display="Clearcast!", type="BUFF", target="SELF", search="Clearcast", icon=1, r=256/256, g=256/256, b=0/256, iscrit=1, soundwave="Sound\\Spells\\Clearcasting_Impact_Chest.ogg", class={"Mage","Shaman","Druid","Priest"}},
 [2] = {name="Flurry", display="Flurry!", type="BUFF", target="SELF", search="Flurry", r=128/256, g=0/256, b=0/256, class={"Warrior","Shaman"}},
 [3] = {name="Lightning Shield", display="Lightning Shield!", type="FADE", target="SELF", search="Lightning Shield", r=0/256, g=0/256, b=256/256,class={"Shaman"}},
 [4] = {name="Nightfall", display="Nightfall!", type="BUFF", target="SELF", search="Shadow Trance", r=0/256, g=128/256, b=128/256, class={"Warlock"}},
