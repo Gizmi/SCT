@@ -220,4 +220,4 @@ SCT.LOCALS.OPTION_EDITBOX1 = { name="Name", tooltipText = "The name for the cust
 SCT.LOCALS.OPTION_EDITBOX2 = { name="Display", tooltipText = "What to display in SCT for the event. Use *1 - *5 for captured values:\n\n*1 - spell name\n*2 - source\n*3 - target\n*4 - varies (amount, etc...)"};
 SCT.LOCALS.OPTION_EDITBOX3 = { name="Search", tooltipText = "What spell or skill to search for. Can be empty (suppression) or partial words."};
 SCT.LOCALS.OPTION_EDITBOX4 = { name="Sound", tooltipText = "Name of ingame sound to play for this event. Ex. GnomeExploration"};
-SCT.LOCALS.OPTION_EDITBOX5 = { name="Wave Sound", tooltipText = "Path to a .wave .ogg sound file to play for this event. Ex. Interface\\AddOns\\MyAddOn\\mysound.wav or Sound\\Spells\\ShaysBell.ogg"};
+SCT.LOCALS.OPTION_EDITBOX5 = { name="Wave Sound", tooltipText = "Path to a .ogg sound file to play for this event. Ex. Interface\\AddOns\\MyAddOn\\mysound.ogg or Sound\\Spells\\ShaysBell.ogg"};
