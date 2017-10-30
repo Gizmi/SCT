@@ -226,4 +226,4 @@ SCT.LOCALS.OPTION_EDITBOX1 = { name="이름", tooltipText = "사용자 이벤트
 SCT.LOCALS.OPTION_EDITBOX2 = { name="표시", tooltipText = "SCT에 이 이벤트를 표시합니다. *1 - *5를 사용하여 측정값:\n\n*1 - 주문 이름\n*2 - 제공자\n*3 - 대상자\n*4 - 값"};
 SCT.LOCALS.OPTION_EDITBOX3 = { name="검색", tooltipText = "주문이나 기술을 검색합니다. 부분 단어를 입력하여 검색할 수 있습니다."};
 SCT.LOCALS.OPTION_EDITBOX4 = { name="소리", tooltipText = "이 이벤트 표시시 소리로 알립니다."};
-SCT.LOCALS.OPTION_EDITBOX5 = { name="Wave 소리", tooltipText = "이 이벤트에 소리 파일을 추가할 수 있습니다(예: Interface\\AddOns\\MyAddOn\\mysound.wav or Sound\\Spells\\ShaysBell.wav)."};
+SCT.LOCALS.OPTION_EDITBOX5 = { name="Wave 소리", tooltipText = "이 이벤트에 소리 파일을 추가할 수 있습니다(예: Interface\\AddOns\\MyAddOn\\mysound.wav or Sound\\Spells\\ShaysBell.ogg)."};
