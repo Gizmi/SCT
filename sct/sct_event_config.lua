@@ -149,7 +149,7 @@
 
                 Examples:
                 In game:      soundwave="Sound\\Spells\\ShaysBell.wav"
-                Custom:       soundwave="Interface\\AddOns\\MyAddOn\\mysound.wav"
+                Custom:       soundwave="Interface\\AddOns\\MyAddOn\\mysound.ogg"
 
   Note:
     Make sure you increase the key count ([1], [2], etc...) for
