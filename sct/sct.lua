@@ -348,7 +348,7 @@ function SCT:UNIT_HEALTH(event, larg1)
     local HPPercent = UnitHealth("player") / UnitHealthMax("player")
     if (HPPercent < warnlevel) and (last_hp_percent >= warnlevel) and (not UnitIsFeignDeath("player")) then
       if (db["PLAYSOUND"] and db["SHOWLOWHP"]) then
-        PlaySoundFile("Sound\\Spells\\bind2_Impact_Base.wav")
+        PlaySoundFile("Sound\\Spells\\bind2_Impact_Base.ogg")
       end
       self:Display_Event("SHOWLOWHP", string_format("%s (%d)", SCT.LOCALS.LowHP, UnitHealth("player")))
     end
@@ -382,7 +382,7 @@ function SCT:UNIT_POWER(event, larg1)
     local ManaPercent = UnitMana("player") / UnitManaMax("player")
     if (ManaPercent < warnlevel) and (last_mana_percent >= warnlevel) and (not UnitIsFeignDeath("player")) then
       if (db["PLAYSOUND"] and db["SHOWLOWMANA"]) then
-        PlaySoundFile("Sound\\Spells\\ShaysBell.wav")
+        PlaySoundFile("Sound\\Spells\\ShaysBell.ogg")
       end
       SCT:Display_Event("SHOWLOWMANA", string_format("%s (%d)", SCT.LOCALS.LowMana, UnitMana("player")))
     end
