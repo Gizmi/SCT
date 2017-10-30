@@ -215,4 +215,4 @@ SCT.LOCALS.OPTION_EDITBOX1 = { name="名稱", tooltipText = "自訂事件的名�
 SCT.LOCALS.OPTION_EDITBOX2 = { name="顯示", tooltipText = "想要SCT顯示的事件. 使用 *1 - *5 做捕捉數值:\n\n*1 - 法術名稱\n*2 - 來源\n*3 - 目標\n*4 - 一般 (數量, 等等...)"};
 SCT.LOCALS.OPTION_EDITBOX3 = { name="搜尋", tooltipText = "用法術或技能去尋找.可以用空格(片語)或部分字搜尋."};
 SCT.LOCALS.OPTION_EDITBOX4 = { name="聲音", tooltipText = "這自訂事件所使用的聲音檔. 例如:GnomeExploration"};
-SCT.LOCALS.OPTION_EDITBOX5 = { name="聲音檔", tooltipText = "這自訂事件所使用的聲音檔的位置. 例如:Interface\\AddOns\\MyAddOn\\mysound.wav or Sound\\Spells\\ShaysBell.wav"};
+SCT.LOCALS.OPTION_EDITBOX5 = { name="聲音檔", tooltipText = "這自訂事件所使用的聲音檔的位置. 例如:Interface\\AddOns\\MyAddOn\\mysound.ogg or Sound\\Spells\\ShaysBell.wav"};
