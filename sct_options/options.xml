@@ -906,9 +906,9 @@
     				</Anchors>
     				<Layers>
     					<Layer level="ARTWORK">
-    						<FontString name="SCTaniExampleData1" inherits="MasterFont"/>
-    						<FontString name="SCTaniExampleData2" inherits="MasterFont"/>
-    						<FontString name="SCTMsgExample1" inherits="MasterFont" justifyH="CENTER" outline="NORMAL">
+    						<FontString name="SCTaniExampleData1" inherits="GameFontNormal"/>
+    						<FontString name="SCTaniExampleData2" inherits="GameFontNormal"/>
+    						<FontString name="SCTMsgExample1" inherits="GameFontNormal" justifyH="CENTER" outline="NORMAL">
     							<FontHeight>
     								<AbsValue val="20"/>
     							</FontHeight>
@@ -1973,8 +1973,8 @@
     						  <OnLoad>
         						StaticPopupDialogs["SCT_RESET"] = {
         						  text = SCT.LOCALS.OPTION_MISC33.warning,
-        						  button1 = TEXT(OKAY) ,
-        						  button2 = TEXT(CANCEL) ,
+        						  button1 = OKAY ,
+        						  button2 = CANCEL ,
         						  OnAccept = function()
         						      SCT:ResetEvents_OnClick()
         						  end,
@@ -2028,8 +2028,8 @@
     						  <OnLoad>
         						StaticPopupDialogs["SCT_DELETE"] = {
         						  text = SCT.LOCALS.OPTION_MISC31.warning,
-        						  button1 = TEXT(OKAY) ,
-        						  button2 = TEXT(CANCEL) ,
+        						  button1 = OKAY ,
+        						  button2 = CANCEL ,
         						  OnAccept = function()
         						      SCT:CustomEventDelete_OnClick()
         						  end,
