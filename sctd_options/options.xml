@@ -606,7 +606,7 @@
 	<Frame name="SCTD_EXAMPLEMSG" toplevel="true" frameStrata="DIALOG" hidden="true" parent="UIParent">
 		<Layers>
 			<Layer level="ARTWORK">
-				<FontString name="SCTDMsgExample1" inherits="MasterFont" font="Fonts\FRIZQT__.TTF" justifyH="CENTER" outline="NORMAL">
+				<FontString name="SCTDMsgExample1" inherits="GameFontNormal" font="Fonts\FRIZQT__.TTF" justifyH="CENTER" outline="NORMAL">
 					<FontHeight>
 						<AbsValue val="20"/>
 					</FontHeight>
