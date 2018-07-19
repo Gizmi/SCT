@@ -1,11 +1,11 @@
 <!-- Scrolling Combat Text V0.1 -->
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   xsi:schemaLocation="http://www.blizzard.com/wow/ui/"> 
 	
-	<MessageFrame name="SCTD_MSGTEXT_TEMPLATE" insertMode="BOTTOM"  virtual="true" inherits="OptionFrameBoxTemplate">
+	<MessageFrame name="SCTD_MSGTEXT_TEMPLATE" insertMode="BOTTOM"  virtual="true" inherits="OptionsBoxTemplate">
 		<Size>
 			<AbsDimension x="600" y="70"/>
 		</Size>
-		<FontString inherits="MasterFont" justifyH="CENTER">
+		<FontString inherits="GameFontNormal" justifyH="CENTER">
 			<FontHeight>
 				<AbsValue val="20"/>
 			</FontHeight>
