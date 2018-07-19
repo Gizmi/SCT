@@ -86,9 +86,11 @@ function SCT:OptionsFrame_OnShow()
     frame = _G["SCTOptionsFrame"..value.index]
     swatch = _G["SCTOptionsFrame"..value.index.."_ColorSwatchNormalTexture"]
     sColor = self.db.profile[self.COLORS_TABLE][value.SCTVar]
+    if sColor then
     frame.r = sColor.r
     frame.g = sColor.g
     frame.b = sColor.b
+    end
     local k = value.SCTVar
     local s = swatch:GetName()
     local f = frame:GetName()
@@ -644,7 +646,9 @@ function SCT:ShowExample(item)
   SCT:AniInit()
 
   --animated example for options that may need it
+  if item then
   local option = item.SCTVar
+  end
   if (option) and (string.find(option,"SHOW") == 1) then
     SCT:Display_Event(option, SCT.LOCALS.EXAMPLE)
   end
