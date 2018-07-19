@@ -27,7 +27,7 @@ SCT.LOCALS.OPTION_EVENT20 = {name = "Репутация", tooltipText = "Вкл/
 SCT.LOCALS.OPTION_EVENT21 = {name = "Ваше исцеление", tooltipText = "Вкл/Выкл отображение на сколько вы исцелили кого"};
 SCT.LOCALS.OPTION_EVENT22 = {name = "Навыки", tooltipText = "Вкл/Выкл оповещение о получении очков навыка"};
 SCT.LOCALS.OPTION_EVENT23 = {name = "Решающие удары", tooltipText = "Вкл/Выкл оповещение о решающем ударе"};
-SCT.LOCALS.OPTION_EVENT24 = {name = "Interrupts", tooltipText = "Enables or Disables showing when you are interrupted"};
+SCT.LOCALS.OPTION_EVENT24 = {name = "Прерывания", tooltipText = "Вкл/Выкл оповещение о прерываниях"};
 SCT.LOCALS.OPTION_EVENT25 = {name = "Рассеяния", tooltipText = "Вкл/Выкл оповещение рессеяниваний"};
 SCT.LOCALS.OPTION_EVENT26 = {name = "Руны", tooltipText = "Вкл/Выкл оповещение о готовности рун"};
 
@@ -61,7 +61,7 @@ SCT.LOCALS.OPTION_CHECK26 = { name = "Поглот.", tooltipText = "Для вы
 SCT.LOCALS.OPTION_CHECK27 = { name = "Скольжение", tooltipText = "Для вывода данного события должен произойти Скользящий удар"};
 SCT.LOCALS.OPTION_CHECK28 = { name = "Сокрушение", tooltipText = "Для вывода данного события должен произойти Сокрушительный удар"};
 SCT.LOCALS.OPTION_CHECK29 = { name = "Только свои дебаффы", tooltipText = "Будут выводиться только те событие в которых дебафф исходит от вас. Работает только для вашей цели."};
---SCT.LOCALS.OPTION_CHECK30 = { name = "Shorten Amounts", tooltipText = "Shorten all amounts over 1000 to appear like:\n1.2k instead of 1221\n650k instead of 650199\n3.7m instead of 3700321\nEtc..."};
+SCT.LOCALS.OPTION_CHECK30 = { name = "Shorten Amounts", tooltipText = "Shorten all amounts over 1000 to appear like:\n1.2k instead of 1221\n650k instead of 650199\n3.7m instead of 3700321\nEtc..."};																																																	  
 
 
 --Slider options values
@@ -128,7 +128,7 @@ SCT.LOCALS.OPTION_MISC29 = {name="Свои события"};
 SCT.LOCALS.OPTION_MISC30 = {name="Сохр. событие", tooltipText = "Сохранить изменения для данного события."};
 SCT.LOCALS.OPTION_MISC31 = {name="Удалить событие", tooltipText = "Удалить данное пользовательское событие.", warning="-Внимание-\n\nВы уверены что вы хотите удалить данное событие?"};
 SCT.LOCALS.OPTION_MISC32 = {name="Новое событие", tooltipText = "Создать новое пользовательское событие."};
-SCT.LOCALS.OPTION_MISC33 = {name="Сброс событий", tooltipText = "Сброс всех событий на стандартные из файла SCT_event_config.lua.", warning="-Внимание-\n\nВы уверены что вы хотите сбросить все пользовательские события SCT на стандартные?"};
+SCT.LOCALS.OPTION_MISC33 = {name="Сброс событий", tooltipText = "Сброс всех событий на стандартные из файла sct_event_config.lua.", warning="-Внимание-\n\nВы уверены что вы хотите сбросить все пользовательские события SCT на стандартные?"};
 SCT.LOCALS.OPTION_MISC34 = {name="Отмена", tooltipText = "Отмена всех изменений для данного события"};
 SCT.LOCALS.OPTION_MISC35 = {name="Классы", tooltipText = "Выберите классы для данного события", open="<", close=">"};
 
@@ -166,7 +166,6 @@ local flags = {
   ["FRIEND"] = "Друзья",
   ["ANY"] = "Любой",
 }
-
 local frames = {
   [SCT.FRAME1] = SCT.LOCALS.OPTION_MISC14.name,
   [SCT.FRAME2] = SCT.LOCALS.OPTION_MISC20.name,
@@ -190,6 +189,25 @@ local misses = {
   ["ANY"] = "Any",
 }
 
+local power = {
+	[Enum.PowerType.Mana] = MANA,
+	[Enum.PowerType.Rage] = RAGE,
+	[Enum.PowerType.Focus] = FOCUS,
+	[Enum.PowerType.Energy] = ENERGY,
+	[Enum.PowerType.ComboPoints] = COMBO_POINTS,
+	[Enum.PowerType.Runes] = RUNES,
+	[Enum.PowerType.RunicPower] = RUNIC_POWER,
+	[Enum.PowerType.SoulShards] = SOUL_SHARDS,
+	[Enum.PowerType.LunarPower] = LUNAR_POWER,
+	[Enum.PowerType.HolyPower] = HOLY_POWER,
+	[Enum.PowerType.Maelstrom] = MAELSTROM_POWER,
+	[Enum.PowerType.Chi] = CHI_POWER,
+	[Enum.PowerType.Insanity] = INSANITY_POWER,
+	[Enum.PowerType.ArcaneCharges] = ARCANE_CHARGES_POWER,
+	[Enum.PowerType.Fury] = FURY,
+	[Enum.PowerType.Pain] = PAIN,
+  [0] = "Any",
+}
 --Custom Selections
 SCT.LOCALS.OPTION_CUSTOMSELECTION1 = { name="Тип события", tooltipText = "Какого типа это событие.", table = eventtypes};
 SCT.LOCALS.OPTION_CUSTOMSELECTION2 = { name="Цель", tooltipText = "Who the event happens to.", table = flags};
@@ -203,4 +221,4 @@ SCT.LOCALS.OPTION_EDITBOX1 = { name="Название", tooltipText = "Назв�
 SCT.LOCALS.OPTION_EDITBOX2 = { name="Отображение", tooltipText = "Что отображать в SCT для события. Используйте *1 - *5 для фиксированных значений:\n\n*1 - название заклинания\n*2 - источник\n*3 - цель\n*4 - изменения (величина, и т.д...)"};
 SCT.LOCALS.OPTION_EDITBOX3 = { name="Поиск", tooltipText = "What spell or skill to search for. Can be empty (suppression) or partial words."};
 SCT.LOCALS.OPTION_EDITBOX4 = { name="Звук", tooltipText = "Name of ingame sound to play for this event. Ex. GnomeExploration"};
-SCT.LOCALS.OPTION_EDITBOX5 = { name="Звуковой файл", tooltipText = "Путь к звуковому файлу формата .ogg для данного события. Пример. Interface\\AddOns\\MyAddOn\\mysound.ogg или Sound\\Spells\\ShaysBell.ogg"};
+SCT.LOCALS.OPTION_EDITBOX5 = { name="Звуковой файл", tooltipText = "Путь к звуковому файлу формата .wave для данного события. Пример. Interface\\AddOns\\MyAddOn\\mysound.wav или Sound\\Spells\\ShaysBell.wav"};
