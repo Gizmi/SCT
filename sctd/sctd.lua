@@ -77,24 +77,25 @@ local SCHOOL_STRINGS = {
 }
 
 local POWER_STRINGS = {
-  [SPELL_POWER_MANA] = MANA,
-  [SPELL_POWER_RAGE] = RAGE,
-  [SPELL_POWER_FOCUS] = FOCUS,
-  [SPELL_POWER_ENERGY] = ENERGY,
-  [SPELL_POWER_RUNES] = RUNES,
-  [SPELL_POWER_RUNIC_POWER] = RUNIC_POWER,
-  [SPELL_POWER_SOUL_SHARDS] = SHARDS,
-  [SPELL_POWER_LUNAR_POWER] = LUNAR_POWER,
-  [SPELL_POWER_HOLY_POWER] = HOLY_POWER,
-  [SPELL_POWER_ALTERNATE_POWER] = ALTERNATE_RESOURCE_TEXT,
-  [SPELL_POWER_MAELSTROM] = MAELSTROM_POWER,
-  [SPELL_POWER_CHI] = CHI_POWER,
-  [SPELL_POWER_INSANITY] = INSANITY_POWER,
-  --[SPELL_POWER_OBSOLETE] = 14;
-  --[SPELL_POWER_OBSOLETE2] = 15;
-  [SPELL_POWER_ARCANE_CHARGES] = ARCANE_CHARGES_POWER,
-  [SPELL_POWER_FURY] = FURY,
-  [SPELL_POWER_PAIN] = PAIN,
+	[Enum.PowerType.Mana] = MANA,
+	[Enum.PowerType.Rage] = RAGE,
+	[Enum.PowerType.Focus] = FOCUS,
+	[Enum.PowerType.Energy] = ENERGY,
+	[Enum.PowerType.ComboPoints] = COMBO_POINTS,
+	[Enum.PowerType.Runes] = RUNES,
+	[Enum.PowerType.RunicPower] = RUNIC_POWER,
+	[Enum.PowerType.SoulShards] = SOUL_SHARDS,
+	[Enum.PowerType.LunarPower] = LUNAR_POWER,
+	[Enum.PowerType.HolyPower] = HOLY_POWER,														  
+	[Enum.PowerType.Maelstrom] = MAELSTROM_POWER,
+	[Enum.PowerType.Chi] = CHI_POWER,
+	[Enum.PowerType.Insanity] = INSANITY_POWER,							
+	 
+	 --[SPELL_POWER_OBSOLETE] = 14;
+         --[SPELL_POWER_OBSOLETE2] = 15;							 
+	[Enum.PowerType.ArcaneCharges] = ARCANE_CHARGES_POWER,
+	[Enum.PowerType.Fury] = FURY,
+	[Enum.PowerType.Pain] = PAIN,
 }
 
 local default_config = {
@@ -614,7 +615,10 @@ end
 ----------------------
 --Register All Events
 function SCTD:RegisterSelfEvents()
-  self:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED","ParseCombat")
+  self:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED",function ()
+    
+self:ParseCombat("COMBAT_LOG_EVENT_UNFILTERED", CombatLogGetCurrentEventInfo())
+  end)
 end
 
 -------------------------
