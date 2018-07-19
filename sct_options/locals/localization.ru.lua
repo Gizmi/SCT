@@ -61,7 +61,7 @@ SCT.LOCALS.OPTION_CHECK26 = { name = "Поглот.", tooltipText = "Для вы
 SCT.LOCALS.OPTION_CHECK27 = { name = "Скольжение", tooltipText = "Для вывода данного события должен произойти Скользящий удар"};
 SCT.LOCALS.OPTION_CHECK28 = { name = "Сокрушение", tooltipText = "Для вывода данного события должен произойти Сокрушительный удар"};
 SCT.LOCALS.OPTION_CHECK29 = { name = "Только свои дебаффы", tooltipText = "Будут выводиться только те событие в которых дебафф исходит от вас. Работает только для вашей цели."};
-SCT.LOCALS.OPTION_CHECK30 = { name = "Shorten Amounts", tooltipText = "Shorten all amounts over 1000 to appear like:\n1.2k instead of 1221\n650k instead of 650199\n3.7m instead of 3700321\nEtc..."};
+--SCT.LOCALS.OPTION_CHECK30 = { name = "Shorten Amounts", tooltipText = "Shorten all amounts over 1000 to appear like:\n1.2k instead of 1221\n650k instead of 650199\n3.7m instead of 3700321\nEtc..."};
 
 
 --Slider options values
@@ -73,7 +73,7 @@ SCT.LOCALS.OPTION_SLIDER5 = { name="Прозрачность текста", minT
 SCT.LOCALS.OPTION_SLIDER6 = { name="Расстояние движущегося текста", minText="Меньше", maxText="Больше", tooltipText = "Настройка расстояния между движущимся текстом"};
 SCT.LOCALS.OPTION_SLIDER7 = { name="Text Center X Position", minText="-600", maxText="600", tooltipText = "Controls the placement of the text center"};
 SCT.LOCALS.OPTION_SLIDER8 = { name="Смещение по Y от центра", minText="-400", maxText="400", tooltipText = "Настройка расположение центра текста"};
-SCT.LOCALS.OPTION_SLIDER8 = { name="Text Center Y Position", minText="-400", maxText="400", tooltipText = "Controls the placement of the text center"};
+--SCT.LOCALS.OPTION_SLIDER8 = { name="Text Center Y Position", minText="-400", maxText="400", tooltipText = "Controls the placement of the text center"};
 SCT.LOCALS.OPTION_SLIDER9 = { name="Смещение по X от центра", minText="-600", maxText="600", tooltipText = "Настройка расположение центра сообщений"};
 SCT.LOCALS.OPTION_SLIDER10 = { name="Смещение по Y от центра", minText="-400", maxText="400", tooltipText = "Настройка расположение центра сообщений"};
 SCT.LOCALS.OPTION_SLIDER11 = { name="Скорость затухания сообщения", minText="Быстрее", maxText="Медленнее", tooltipText = "Настройка скорости затухания сообщения"};
@@ -188,28 +188,6 @@ local misses = {
   ["IMMUNE"] = IMMUNE,
   ["EVADE"] = EVADE,
   ["ANY"] = "Any",
-}
-
-local power = {
-  [SPELL_POWER_MANA] = MANA,
-  [SPELL_POWER_RAGE] = RAGE,
-  [SPELL_POWER_FOCUS] = FOCUS,
-  [SPELL_POWER_ENERGY] = ENERGY,
-  [SPELL_POWER_RUNES] = RUNES,
-  [SPELL_POWER_RUNIC_POWER] = RUNIC_POWER,
-  [SPELL_POWER_SOUL_SHARDS] = SHARDS,
-  [SPELL_POWER_LUNAR_POWER] = LUNAR_POWER,
-  [SPELL_POWER_HOLY_POWER] = HOLY_POWER,
-  [SPELL_POWER_ALTERNATE_POWER] = ALTERNATE_RESOURCE_TEXT,
-  [SPELL_POWER_MAELSTROM] = MAELSTROM_POWER,
-  [SPELL_POWER_CHI] = CHI_POWER,
-  [SPELL_POWER_INSANITY] = INSANITY_POWER,
-  --[SPELL_POWER_OBSOLETE] = 14;
-  --[SPELL_POWER_OBSOLETE2] = 15;
-  [SPELL_POWER_ARCANE_CHARGES] = ARCANE_CHARGES_POWER,
-  [SPELL_POWER_FURY] = FURY,
-  [SPELL_POWER_PAIN] = PAIN,
-  [0] = "Any",
 }
 
 --Custom Selections
