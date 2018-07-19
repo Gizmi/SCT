@@ -40,8 +40,8 @@ local menuloaded = false
 local GetComboPoints = GetComboPoints
 local UnitHealth = UnitHealth
 local UnitHealthMax = UnitHealthMax
-local UnitMana = UnitMana
-local UnitManaMax = UnitManaMax
+local UnitMana = UnitPower
+local UnitManaMax = UnitPowerMax
 local UnitName = UnitName
 local UnitIsFriend = UnitIsFriend
 local UnitIsDead = UnitIsDead
@@ -155,24 +155,24 @@ local SCHOOL_STRINGS = {
 }
 
 local POWER_STRINGS = {
-  [SPELL_POWER_MANA] = MANA,
-  [SPELL_POWER_RAGE] = RAGE,
-  [SPELL_POWER_FOCUS] = FOCUS,
-  [SPELL_POWER_ENERGY] = ENERGY,
-  [SPELL_POWER_RUNES] = RUNES,
-  [SPELL_POWER_RUNIC_POWER] = RUNIC_POWER,
-  [SPELL_POWER_SOUL_SHARDS] = SHARDS,
-  [SPELL_POWER_LUNAR_POWER] = LUNAR_POWER,
-  [SPELL_POWER_HOLY_POWER] = HOLY_POWER,
-  [SPELL_POWER_ALTERNATE_POWER] = ALTERNATE_RESOURCE_TEXT,
-  [SPELL_POWER_MAELSTROM] = MAELSTROM_POWER,
-  [SPELL_POWER_CHI] = CHI_POWER,
-  [SPELL_POWER_INSANITY] = INSANITY_POWER,
+	[Enum.PowerType.Mana] = MANA,
+	[Enum.PowerType.Rage] = RAGE,
+	[Enum.PowerType.Focus] = FOCUS,
+	[Enum.PowerType.Energy] = ENERGY,
+	[Enum.PowerType.ComboPoints] = COMBO_POINTS,
+	[Enum.PowerType.Runes] = RUNES,
+	[Enum.PowerType.RunicPower] = RUNIC_POWER,
+	[Enum.PowerType.SoulShards] = SOUL_SHARDS,
+	[Enum.PowerType.LunarPower] = LUNAR_POWER,
+	[Enum.PowerType.HolyPower] = HOLY_POWER,												  
+	[Enum.PowerType.Maelstrom] = MAELSTROM_POWER,
+	[Enum.PowerType.Chi] = CHI_POWER,
+	[Enum.PowerType.Insanity] = INSANITY_POWER,
   --[SPELL_POWER_OBSOLETE] = 14;
   --[SPELL_POWER_OBSOLETE2] = 15;
-  [SPELL_POWER_ARCANE_CHARGES] = ARCANE_CHARGES_POWER,
-  [SPELL_POWER_FURY] = FURY,
-  [SPELL_POWER_PAIN] = PAIN,
+	[Enum.PowerType.ArcaneCharges] = ARCANE_CHARGES_POWER,
+	[Enum.PowerType.Fury] = FURY,
+	[Enum.PowerType.Pain] = PAIN,
 }
 
 local SHADOW_STRINGS = {
@@ -389,7 +389,7 @@ function SCT:UNIT_POWER(event, larg1)
     last_mana_percent = ManaPercent
   end
   if (larg1 == "player") and (db["SHOWALLPOWER"]) then
-    local ManaFull = UnitMana("player")
+    local ManaFull = UnitPower("player")
     if (ManaFull > last_mana_full) then
       self:Display_Event("SHOWPOWER", string_format("+%d %s", ManaFull-last_mana_full, string_nil(POWER_STRINGS[UnitPowerType("player")])))
     end
@@ -410,7 +410,7 @@ end
 ----------------------
 --Power Change
 function SCT:UNIT_DISPLAYPOWER(event)
-  last_mana_full = UnitMana("player")
+  last_mana_full = UnitPower("player")
 end
 
 ----------------------
@@ -541,7 +541,7 @@ function SCT:ParseCombat(larg1, timestamp, event, hideCaster, sourceGUID, source
     if toPlayer then
       --self heals
       if toPlayer and fromPlayer then
-        if (db["SHOWOVERHEAL"]) and overHeal > 0 then healtot = string_format("%s {%s}", tostring(self:ShortenValue(amount-overHeal)), tostring(self:ShortenValue(overHeal))) end
+        if (db["SHOWOVERHEAL"]) and overHeal > 0 then healtot = string_format("%d {%d}", amount-overHeal, overHeal) end
         self:Display_Event("SHOWHEAL", "+"..healtot, critical, nil, nil, self:ShortenString(spellName), nil, nil, nil, texture)
       --incoming heals
       else
@@ -1017,15 +1017,20 @@ function SCT:RegisterSelfEvents()
 
   -- Register Main Events
   self:RegisterEvent("UNIT_HEALTH")
-  self:RegisterEvent("UNIT_POWER")
+   self:RegisterEvent("UNIT_POWER_UPDATE", function ()
+    
+  end)
   self:RegisterEvent("UNIT_DISPLAYPOWER")
   self:RegisterEvent("RUNE_POWER_UPDATE");
   self:RegisterEvent("PLAYER_REGEN_ENABLED")
   self:RegisterEvent("PLAYER_REGEN_DISABLED")
-  self:RegisterEvent("UNIT_COMBO_POINTS")
+ -- self:RegisterEvent("UNIT_COMBO_POINTS")
   self:RegisterEvent("COMBAT_TEXT_UPDATE")
   self:RegisterEvent("CHAT_MSG_SKILL")
-  self:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED","ParseCombat")
+  self:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED",function ()
+    
+self:ParseCombat("COMBAT_LOG_EVENT_UNFILTERED", CombatLogGetCurrentEventInfo())
+  end)
 
   --Create event to load up correct font
   --when another mod loads. Incase they try to change
