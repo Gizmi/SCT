@@ -1,4 +1,4 @@
-## Interface: 70300
+## Interface: 80000
 ## Title: SCTD Options
 ## Title-ruRU: SCTD [Настройки]
 ## Notes:  Options menu for SCTD (LoadOnDemand)
