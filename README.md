@@ -1,1 +1,1 @@
-# SCT+SCTD fo BFA
+# SCT+SCTD for BFA
