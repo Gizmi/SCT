@@ -632,7 +632,8 @@ end
 
 ----------------------
 --Handle Blizzard events
-function SCT:COMBAT_TEXT_UPDATE(event, larg1, larg2, larg3)
+function SCT:COMBAT_TEXT_UPDATE(event, larg1)
+local larg2, larg3 = GetCurrentCombatTextEventInfo()
   --Normal Events
   if (larg1=="SPELL_ACTIVE") then
     --check for redundant display info
