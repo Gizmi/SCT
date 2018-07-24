@@ -525,7 +525,7 @@ function SCT:ParseCombat(larg1, timestamp, event, hideCaster, sourceGUID, source
     texture = select(3, GetSpellInfo(spellId))
     if toPlayer then
       if db["SHOWFADE"] then
-        self:Display_Event("SHOWFADE", "-["..self:ShortenString(spellName).."]", nil, nil, nil, nil, nil, nil, nil, texture)
+        self:Display_Event("SHOWFADE", "-"..self:ShortenString(spellName).."", nil, nil, nil, nil, nil, nil, nil, texture)
       end
     end
   ------------heals----------------
